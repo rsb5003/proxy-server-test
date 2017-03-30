@@ -1,0 +1,15 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+logging:
+  level: INFO
+  loggers:
+    com.comcast.ace: ${LOGGING_LEVEL:-DEBUG}
+  appenders:
+  - type: console
+
+proxy:
+- prefix: /proxy/nm
+  proxyTo: http://localhost:8082
